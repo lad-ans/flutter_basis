@@ -1,0 +1,19 @@
+name: flutter_basis
+description: Start point package for Flutter applications
+version: 1.0.2
+homepage:
+
+environment:
+  sdk: ">=2.18.5 <3.0.0"
+  flutter:
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get_it:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
