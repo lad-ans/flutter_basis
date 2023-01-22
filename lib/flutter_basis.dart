@@ -4,6 +4,8 @@ export 'src/messages/event_bus.dart';
 
 export 'src/service_locator.dart';
 
+export 'src/responsive/responsive.dart';
+
 export 'src/navigation/navigate.dart';
 export 'src/navigation/transition.dart' show TransitionType;
 export 'src/navigation/routing.dart';
