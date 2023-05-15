@@ -1,4 +1,4 @@
-const errPattern = "Could not find a generator for route";
+const errPattern = 'Could not find a generator for route';
 
 String getNavigationErrorPrettly(String err, {String? route}) {
   if (err.toLowerCase().contains(errPattern.toLowerCase())) {

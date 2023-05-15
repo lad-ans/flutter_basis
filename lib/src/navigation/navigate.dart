@@ -17,7 +17,7 @@ class Navigate {
     try {
       return await navigatorKey.currentState?.pushNamed<T>(routeName, arguments: arguments);
     } catch (e) {
-      log("A error found: ", error: getNavigationErrorPrettly(e.toString(), route: routeName));
+      log('A error found: ', error: getNavigationErrorPrettly(e.toString(), route: routeName));
       return null;
     }
   }
@@ -26,7 +26,7 @@ class Navigate {
     try {
       return await navigatorKey.currentState?.pushNamedAndRemoveUntil<T>(routeName, predicate, arguments: arguments);
     } catch (e) {
-      log("A error found: ", error: getNavigationErrorPrettly(e.toString(), route: routeName));
+      log('A error found: ', error: getNavigationErrorPrettly(e.toString(), route: routeName));
       return null;
     }
   }
@@ -35,7 +35,7 @@ class Navigate {
     try {
       return await navigatorKey.currentState?.pushReplacementNamed<T, TO>(routeName, arguments: arguments);
     } catch (e) {
-      log("A error found: ", error: getNavigationErrorPrettly(e.toString(), route: routeName));
+      log('A error found: ', error: getNavigationErrorPrettly(e.toString(), route: routeName));
       return null;
     }
   }
@@ -44,7 +44,7 @@ class Navigate {
     try {
       return await navigatorKey.currentState?.popAndPushNamed<T, TO>(routeName, result: result, arguments: arguments);
     } catch (e) {
-      log("A error found: ", error: getNavigationErrorPrettly(e.toString(), route: routeName));
+      log('A error found: ', error: getNavigationErrorPrettly(e.toString(), route: routeName));
       return null;
     }
   }
@@ -53,7 +53,7 @@ class Navigate {
     try {
       navigatorKey.currentState?.pop<T>(result);
     } catch (e) {
-      log("A error found: ", error: getNavigationErrorPrettly(e.toString()));
+      log('A error found: ', error: getNavigationErrorPrettly(e.toString()));
     }
   }
 

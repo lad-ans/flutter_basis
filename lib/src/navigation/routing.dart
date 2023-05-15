@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'basis_route.dart';
 import 'transition.dart';
 
-abstract class Routing {
+mixin Routing {
   String get initialRoute => '/';
   Map<String, BasisRoute> get basisRoutes;
 
@@ -13,38 +13,23 @@ abstract class Routing {
     Animation<double> secondAnim,
     child, {
     TransitionType? transitionType,
-  }) {
+  }) =>
     switch (transitionType) {
-      case TransitionType.upToDown:
-        return upToDown(anim, child);
-      case TransitionType.downToUp:
-        return downToUp(anim, child);
-      case TransitionType.leftToRight:
-        return leftToRight(anim, child);
-      case TransitionType.rightToLeft:
-        return rightToLeft(anim, child);
-      case TransitionType.leftToRightFaded:
-        return leftToRightFaded(anim, child);
-      case TransitionType.rightToLeftFaded:
-        return rightToLeftFaded(anim, child);
-      case TransitionType.rotate:
-        return rotate(anim, child);
-      case TransitionType.scale:
-        return scale(anim, child);
-      case TransitionType.scaleElasticIn:
-        return scaleElasticIn(anim, child);
-      case TransitionType.scaleElasticInOut:
-        return scaleElasticInOut(anim, child);
-      case TransitionType.size:
-        return size(anim, child);
-      case TransitionType.fadeIn:
-        return fadeIn(anim, child);
-      case TransitionType.noTransition:
-        return child;
-      default:
-        return rightToLeft(anim, child);
-    }	
-  }
+      TransitionType.upToDown => upToDown(anim, child),
+      TransitionType.downToUp => downToUp(anim, child),
+      TransitionType.leftToRight => leftToRight(anim, child),
+      TransitionType.rightToLeft => rightToLeft(anim, child),
+      TransitionType.leftToRightFaded => leftToRightFaded(anim, child),
+      TransitionType.rightToLeftFaded => rightToLeftFaded(anim, child),
+      TransitionType.rotate => rotate(anim, child),
+      TransitionType.scale => scale(anim, child),
+      TransitionType.scaleElasticIn => scaleElasticIn(anim, child),
+      TransitionType.scaleElasticInOut => scaleElasticInOut(anim, child),
+      TransitionType.size => size(anim, child),
+      TransitionType.fadeIn => fadeIn(anim, child),
+      TransitionType.noTransition => child,      
+      _ => rightToLeft(anim, child)
+    };
 
   Route? onGenerateRoute(RouteSettings routerSettings) {
     var routerName = routerSettings.name;
